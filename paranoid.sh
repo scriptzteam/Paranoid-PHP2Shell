@@ -37,4 +37,6 @@ if command -v systemctl >/dev/null && systemctl is-active --quiet apache2; then
     systemctl restart apache2
     echo '[OK] Apache restarted'
 fi
+
+"$php_bin" -r 'echo "session.upload_progress.enabled=", ini_get("session.upload_progress.enabled") ? "1 (enabled)" : "0 (disabled)", PHP_EOL;'
 BASH
